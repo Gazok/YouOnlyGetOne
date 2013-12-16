@@ -1,17 +1,23 @@
-#include <iostream>
 #include <sstream>
+#include <random>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 
+sf::Vector2i randPos();
+sf::Color randCol();
+
+std::mt19937_64 rEngine;
+sf::RenderWindow w1;
+
 int main()
 {
     using namespace sf;
 
+    Color bg = randCol();
     bool run = true;
     unsigned score = 0;
-    RenderWindow w1;
 
     VideoMode v = VideoMode::getDesktopMode();
     v.width = 1;
@@ -33,8 +39,9 @@ int main()
             {
                 std::stringstream scoreStream;
                 scoreStream << "Score: " << ++score;
-                std::cout << scoreStream.str() << std::endl;
                 w1.setTitle(scoreStream.str());
+                w1.setPosition(randPos());
+                bg = randCol();
                 break;
             }
             default:
@@ -42,8 +49,25 @@ int main()
             }
         }
 
-
-        w1.clear();
+        w1.clear(bg);
         w1.display();
     }
+
+    w1.close();
+}
+
+sf::Vector2i randPos()
+{
+    std::uniform_int_distribution<int> x(0,sf::VideoMode::getDesktopMode().width);
+    std::uniform_int_distribution<int> y(0,sf::VideoMode::getDesktopMode().height);
+
+    return {x(rEngine),y(rEngine)};
+}
+
+sf::Color randCol()
+{
+    std::uniform_int_distribution<int> dist(0,255);
+
+    return sf::Color(dist(rEngine), dist(rEngine), dist(rEngine));
+
 }
