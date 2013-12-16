@@ -1,5 +1,5 @@
-YouOnlyGetOne
-=============
+.
+=
 
 An [LD48](http://ludumdare.com) Jam entry.
 
