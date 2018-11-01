@@ -1,12 +1,12 @@
 .
 =
 
-An [LD48](http://ludumdare.com) Jam entry.
+A joke game made in about twenty minutes for [Ludum Dare](http://ludumdare.com)
+28.
 
 Theme: You Only Get One
 
-[Entry
-Page](http://www.ludumdare.com/compo/ludum-dare-28/?action=preview&uid=32067)
+[Entry Page](http://www.ludumdare.com/compo/ludum-dare-28/?action=preview&uid=32067)
 
 Requirements
 ------------
@@ -16,9 +16,8 @@ Requirements
 Binaries
 --------
 
-### Ludum Dare
-* [Windows x86](http://gazokblog.co.uk/misc/'/'.zip)
-* [Linux x64](http://gazokblog.co.uk/misc/'/'.tar.gz)
+* [Windows x86](https://jamiebayne.co.uk/games/'/'.zip)
+* [Linux x64](https://jamiebayne.co.uk/games/'/'.tar.gz)
 
 Build
 -----
